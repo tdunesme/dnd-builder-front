@@ -1,0 +1,62 @@
+/* stylelint-disable at-rule-no-unknown */
+@import "tailwindcss";
+
+/* 🎨 Thème D&D builder */
+@theme {
+  /* Couleurs de surface (fond) */
+  --color-surface: #05060b;
+  --color-surface-soft: #101320;
+  --color-surface-softer: #181c2b;
+
+  /* Accent “or magique” */
+  --color-accent: #facc15;
+  --color-accent-soft: #fef08a;
+
+  /* Bordures discrètes */
+  --color-border-subtle: #282f42;
+
+  /* Typo (optionnel, tu peux changer ça dans App.vue aussi) */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+
+  /* Radius & shadow custom (pour les cards) */
+  --radius-xl: 0.9rem;
+  --radius-2xl: 1.25rem;
+  --shadow-soft-card: 0 20px 40px rgba(0, 0, 0, 0.45);
+
+  /* Espacements “page” */
+  --spacing-page: 1.5rem;
+  --spacing-page-lg: 2rem;
+}
+
+/* ⚙️ Base globale */
+@layer base {
+  html,
+  body,
+  #app {
+    @apply h-full;
+  }
+
+  body {
+    @apply bg-surface text-gray-100 antialiased font-sans;
+  }
+
+  a {
+    @apply text-accent underline-offset-4 hover:underline hover:text-accent-soft;
+  }
+}
+
+/* 🧩 Composants utilitaires globaux */
+@layer components {
+  .app-container {
+    @apply min-h-screen bg-surface text-gray-100;
+  }
+
+  .page-shell {
+    @apply min-h-screen bg-surface text-gray-100 flex flex-col;
+  }
+
+  .page-main {
+    @apply flex-1 px-(--spacing-page);
+  }
+}

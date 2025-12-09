@@ -30,12 +30,24 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/DashboardView.vue"),
     meta: { layout: "app" },
   }, */
-  /* {
+  {
     path: "/characters",
     name: "characters",
-    component: () => import("@/views/CharactersListView.vue"),
-    meta: { layout: "app" },
-  }, */
+    component: () => import("../views/characters/CharactersList.vue"),
+    meta: {
+      layout: "app",
+      title: "Mes personnages",
+    },
+  },
+  {
+    path: "/characters/:id",
+    name: "character",
+    component: () => import("../views/characters/Character.vue"),
+    meta: {
+      layout: "app",
+      title: "Personnage",
+    },
+  },
   /* {
     path: "/builder",
     name: "builder",

@@ -54,7 +54,7 @@ const isActive = (path: string) => route.path === path;
         </header>
 
         <main class="page-main">
-          <div class="page-max-w">
+          <div class="page-max-w pt-4">
             <slot>
               <RouterView />
             </slot>
